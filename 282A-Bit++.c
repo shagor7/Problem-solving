@@ -1,19 +1,27 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    int n = 0, i;
+int main()
+{
+    int n, i;
+    char operation[4];
+    int x = 0;
+
+
     scanf("%d", &n);
 
-    int x = 0;
-    char operation[4];  // To store the operation, including null terminator '\0'
 
-    for ( i = 0; i < n; i++) {
+    for ( i = 0; i < n; i++)
+    {
         scanf("%s", operation);
 
-        if (strcmp(operation, "++x") == 0 || strcmp(operation, "x++") == 0) {
+
+        if (operation[1]== '+')
+        {
             x++;
-        } else if (strcmp(operation, "--x") == 0 || strcmp(operation, "x--") == 0) {
+        }
+        else
+        {
             x--;
         }
     }
@@ -22,3 +30,4 @@ int main() {
 
     return 0;
 }
+
