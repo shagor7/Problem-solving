@@ -2,17 +2,34 @@
 
 int main ()
 {
-    char a[], b[];
+    char a[101], b[101];
+    int i, result = 0;
+    scanf("%s %s", a,b);
 
-    scanf("%c%c", a,b);
 
-    for(i = 0; a == '\0' && b == '\0'; i++)
+
+    for(i = 0; a[i]  && b[i] ; i++)
     {
-        if(a[i]==b[i] || a[i] + '65' == b[i] || a[i] == b[i] + '65' && a[i] == '\0' && b[i] == '\0')
+
+        if(a[i]  >= 'A' && a[i]  <= 'Z' )
         {
-            printf("%d", 0);
+            a[i] = a[i] + 32;
+        }
+        if(b[i]  >= 'A' && b[i]  <= 'Z' )
+        {
+            b[i] = b[i] + 32;
+        }
+        if(a[i]< b[i])
+        {
+            result = -1 ;
             break;
         }
-        if(a[i] > b[i] || )
+        else if(a[i]> b[i])
+        {
+            result = 1;
+            break;
+        }
     }
+    printf("%d", result);
+    return 0;
 }
